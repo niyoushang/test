@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ceshi</string>
+
+    <string name="url_douyin_regex">(?s).*?(www\.iesdouyin\.com|v\.douyin\.com).*?</string>
+</resources>
