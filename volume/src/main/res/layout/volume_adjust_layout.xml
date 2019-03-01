@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:paddingLeft="12dp"
+    android:orientation="vertical">
+
+    <com.nys.volume.core.CustomSeekBar
+        android:id="@+id/commonui_audio_progressbar"
+        android:layout_width="9dp"
+        android:layout_height="164dp"
+        app:background="@drawable/volume_seekbar_background"
+        app:progress="@drawable/volume_seekbar_progress"
+        app:orientations="1"
+        app:progressWidth="2dp"
+        app:thumb="@drawable/bg_volume_white"
+        app:thumbWidth="9dp" />
+
+    <ImageView
+        android:id="@+id/commonui_audio_progressbar_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center_vertical"
+        app:srcCompat="@drawable/icon_volume_open" />
+
+</LinearLayout>

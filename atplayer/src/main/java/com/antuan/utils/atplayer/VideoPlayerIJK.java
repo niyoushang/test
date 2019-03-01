@@ -26,7 +26,7 @@ public class VideoPlayerIJK extends FrameLayout {
     /**
      * 由ijkplayer提供，用于播放视频，需要给他传入一个surfaceView
      */
-    private IMediaPlayer mMediaPlayer = null;
+    private IjkMediaPlayer mMediaPlayer = null;
 
     /**
      * 视频文件地址
@@ -57,7 +57,9 @@ public class VideoPlayerIJK extends FrameLayout {
 
     private void initVideoView(Context context) {
         mContext = context;
+
         mCachePath = context.getExternalCacheDir().getPath();
+
         //获取焦点，不知道有没有必要~。~
         setFocusable(true);
     }
@@ -112,6 +114,8 @@ public class VideoPlayerIJK extends FrameLayout {
         }
     }
 
+
+
     /**
      * 加载视频
      */
@@ -140,7 +144,7 @@ public class VideoPlayerIJK extends FrameLayout {
             mMediaPlayer.release();
         }
         IjkMediaPlayer ijkMediaPlayer = new IjkMediaPlayer();
-//        ijkMediaPlayer.native_setLogLevel(IjkMediaPlayer.IJK_LOG_DEBUG);
+        ijkMediaPlayer.native_setLogLevel(IjkMediaPlayer.IJK_LOG_DEBUG);
 
 //        //开启硬解码
         ijkMediaPlayer.setOption(IjkMediaPlayer.OPT_CATEGORY_PLAYER, "mediacodec", 1);
@@ -152,10 +156,8 @@ public class VideoPlayerIJK extends FrameLayout {
             mMediaPlayer.setOnInfoListener(listener);
             mMediaPlayer.setOnSeekCompleteListener(listener);
             mMediaPlayer.setOnBufferingUpdateListener(listener);
+            mMediaPlayer.setOnPlayingUpdateListener(listener);
             mMediaPlayer.setOnErrorListener(listener);
-            mMediaPlayer.setOnCompletionListener(listener);
-            mMediaPlayer.setOnVideoSizeChangedListener(listener);
-            mMediaPlayer.setOnTimedTextListener(listener);
         }
     }
 
@@ -163,6 +165,11 @@ public class VideoPlayerIJK extends FrameLayout {
         this.listener = listener;
         if (mMediaPlayer != null) {
             mMediaPlayer.setOnPreparedListener(listener);
+            mMediaPlayer.setOnInfoListener(listener);
+            mMediaPlayer.setOnSeekCompleteListener(listener);
+            mMediaPlayer.setOnBufferingUpdateListener(listener);
+            mMediaPlayer.setOnPlayingUpdateListener(listener);
+            mMediaPlayer.setOnErrorListener(listener);
         }
     }
 

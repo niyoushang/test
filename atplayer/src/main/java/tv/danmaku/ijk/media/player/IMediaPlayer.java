@@ -160,6 +160,10 @@ public interface IMediaPlayer {
         void onBufferingUpdate(IMediaPlayer mp, int percent);
     }
 
+    interface OnPlayingUpdateListener {
+        void onPlayingUpdate(IMediaPlayer mp, int percent);
+    }
+
     interface OnSeekCompleteListener {
         void onSeekComplete(IMediaPlayer mp);
     }

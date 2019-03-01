@@ -1,1 +1,1 @@
-include ':app', ':textlibrary', ':atplayer', ':xmarqueeview'
+include ':app', ':textlibrary', ':atplayer', ':xmarqueeview', ':volume'

@@ -24,6 +24,7 @@ public abstract class AbstractMediaPlayer implements IMediaPlayer {
     private OnPreparedListener mOnPreparedListener;
     private OnCompletionListener mOnCompletionListener;
     private OnBufferingUpdateListener mOnBufferingUpdateListener;
+    private OnPlayingUpdateListener mOnPlayingUpdateListener;
     private OnSeekCompleteListener mOnSeekCompleteListener;
     private OnVideoSizeChangedListener mOnVideoSizeChangedListener;
     private OnErrorListener mOnErrorListener;
@@ -41,6 +42,11 @@ public abstract class AbstractMediaPlayer implements IMediaPlayer {
     public final void setOnBufferingUpdateListener(
             OnBufferingUpdateListener listener) {
         mOnBufferingUpdateListener = listener;
+    }
+
+    public final void setOnPlayingUpdateListener(
+            OnPlayingUpdateListener listener) {
+        mOnPlayingUpdateListener = listener;
     }
 
     public final void setOnSeekCompleteListener(OnSeekCompleteListener listener) {
@@ -67,6 +73,7 @@ public abstract class AbstractMediaPlayer implements IMediaPlayer {
     public void resetListeners() {
         mOnPreparedListener = null;
         mOnBufferingUpdateListener = null;
+        mOnPlayingUpdateListener = null;
         mOnCompletionListener = null;
         mOnSeekCompleteListener = null;
         mOnVideoSizeChangedListener = null;
@@ -88,6 +95,11 @@ public abstract class AbstractMediaPlayer implements IMediaPlayer {
     protected final void notifyOnBufferingUpdate(int percent) {
         if (mOnBufferingUpdateListener != null)
             mOnBufferingUpdateListener.onBufferingUpdate(this, percent);
+    }
+
+    protected final void notifyOnPlayingUpdate(int percent) {
+        if (mOnPlayingUpdateListener != null)
+            mOnPlayingUpdateListener.onPlayingUpdate(this, percent);
     }
 
     protected final void notifyOnSeekComplete() {

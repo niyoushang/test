@@ -1,6 +1,4 @@
 package tv.danmaku.ijk.media.player.ffmpeg;
-import com.antuan.utils.atplayer.VideobackInterFace;
-
 import tv.danmaku.ijk.media.player.pragma.DebugLog;
 
 //m3u预加载
@@ -12,9 +10,6 @@ public class IjkPreloader {
     public IjkPreloader(){
         mNativeAddress = nativeCreate();
     }
-
-    public VideobackInterFace videobackInterFace;
-
 
     //析构
     protected void finalize() {
@@ -63,9 +58,6 @@ public class IjkPreloader {
     //jni缓存完毕调用
     protected  void onFinish(int ret){
         DebugLog.d(TAG,"preload finish "+ret);
-        if(videobackInterFace != null) {
-            videobackInterFace.onFinish(ret);
-        }
     }
 
     protected native long nativeCreate();

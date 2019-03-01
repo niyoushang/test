@@ -74,6 +74,9 @@ public final class IjkMediaPlayer extends AbstractMediaPlayer {
     private static final int MEDIA_BUFFERING_UPDATE = 3;
     private static final int MEDIA_SEEK_COMPLETE = 4;
     private static final int MEDIA_SET_VIDEO_SIZE = 5;
+
+
+    private static final int MEDIA_PLAYING_UPDATE = 7;
     private static final int MEDIA_TIMED_TEXT = 99;
     private static final int MEDIA_ERROR = 100;
     private static final int MEDIA_INFO = 200;
@@ -988,7 +991,7 @@ public final class IjkMediaPlayer extends AbstractMediaPlayer {
                 player.notifyOnCompletion();
                 return;
 
-            case MEDIA_BUFFERING_UPDATE:
+            case MEDIA_BUFFERING_UPDATE: {
                 long bufferPosition = msg.arg1;
                 if (bufferPosition < 0) {
                     bufferPosition = 0;
@@ -1004,9 +1007,25 @@ public final class IjkMediaPlayer extends AbstractMediaPlayer {
                 }
 
                 // DebugLog.efmt(TAG, "Buffer (%d%%) %d/%d",  percent, bufferPosition, duration);
-                player.notifyOnBufferingUpdate((int)percent);
+                player.notifyOnBufferingUpdate((int) percent);
                 return;
-
+            }
+            case MEDIA_PLAYING_UPDATE: {
+                long position = msg.arg1;
+                if (position < 0) {
+                    position = 0;
+                }
+                long percent = 0;
+                long duration = player.getDuration();
+                if (duration > 0) {
+                    percent = position * 100 / duration;
+                }
+                if (percent >= 100) {
+                    percent = 100;
+                }
+                player.notifyOnPlayingUpdate((int)percent);
+                return;
+            }
             case MEDIA_SEEK_COMPLETE:
                 player.notifyOnSeekComplete();
                 return;

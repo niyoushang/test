@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="volume_adjust_red_r1">#ff0000</color>
+    <color name="volume_adjust_red_r2">#ff358d</color>
+    <color name="volume_adjust_yellow_y1">#ffd600</color>
+    <color name="volume_adjust_yellow_y2">#ff9500</color>
+    <color name="volume_adjust_yellow_y3">#ff742f</color>
+    <color name="volume_adjust_blue_b1">#1e88e5</color>
+    <color name="volume_adjust_black_c1">#ff000000</color>
+    <color name="volume_adjust_black_c2">#de000000</color>
+    <color name="volume_adjust_black_c3">#b3000000</color>
+    <color name="volume_adjust_black_c4">#8a000000</color>
+    <color name="volume_adjust_black_c5">#61000000</color>
+    <color name="volume_adjust_black_c6">#42000000</color>
+    <color name="volume_adjust_black_c7">#1e000000</color>
+    <color name="volume_adjust_black_c8">#14000000</color>
+    <color name="volume_adjust_black_c9">#10000000</color>
+    <color name="volume_adjust_black_c10">#0A000000</color>
+    <color name="volume_adjust_white_w1">#ffffffff</color>
+    <color name="volume_adjust_white_w2">#f5ffffff</color>
+    <color name="volume_adjust_white_w3">#e6ffffff</color>
+    <color name="volume_adjust_white_w4">#b2ffffff</color>
+    <color name="volume_adjust_white_w5">#80ffffff</color>
+    <color name="volume_adjust_white_w6">#66ffffff</color>
+    <color name="volume_adjust_white_w7">#1affffff</color>
+
+    <color name="volume_adjust_transparent">#00000000</color>
+
+
+</resources>

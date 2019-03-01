@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.nys.test.common.DateUtil;
+import com.nys.volume.core.LRVolumeAdjustManager;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -38,5 +39,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+        LRVolumeAdjustManager.registerActivity(this);
     }
 }
