@@ -158,6 +158,7 @@ public class VideoPlayerIJK extends FrameLayout {
             mMediaPlayer.setOnBufferingUpdateListener(listener);
             mMediaPlayer.setOnPlayingUpdateListener(listener);
             mMediaPlayer.setOnErrorListener(listener);
+            mMediaPlayer.setOnNativeInvokeListener(listener);
         }
     }
 
@@ -170,6 +171,7 @@ public class VideoPlayerIJK extends FrameLayout {
             mMediaPlayer.setOnBufferingUpdateListener(listener);
             mMediaPlayer.setOnPlayingUpdateListener(listener);
             mMediaPlayer.setOnErrorListener(listener);
+            mMediaPlayer.setOnNativeInvokeListener(listener);
         }
     }
 

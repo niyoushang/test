@@ -5,7 +5,7 @@ apply plugin: 'maven-publish'
 
 def MAVEN_LOCAL_PATH ='http://47.104.184.200:8081/artifactory'
 def ARTIFACT_ID = 'atplayer'
-def VERSION_NAME = '1.0.12'
+def VERSION_NAME = '1.0.13'
 def GROUP_ID = 'com.antuan.utils'
 
 publishing {
